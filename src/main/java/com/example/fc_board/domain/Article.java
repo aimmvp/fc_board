@@ -21,7 +21,7 @@ import java.util.Set;
         @Index(columnList = "title"),
         @Index(columnList = "hashtag"),
         @Index(columnList = "createdAt"),
-        @Index(columnList = "createdBy"),
+        @Index(columnList = "createdBy")
 })
 @EntityListeners(AuditingEntityListener.class)
 @Entity
@@ -38,7 +38,7 @@ public class Article {
     @ToString.Exclude
     @OrderBy("id")
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
-    private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
+    private final Set<ArticleComment> articleComments = new LinkedHashSet<>(); // 영속성 설정
 
     @CreatedDate @Column(nullable = false) private LocalDateTime createdAt;    // 생성일시
     @CreatedBy @Column(nullable = false, length = 100) private String createdBy;   // 생성자
@@ -59,7 +59,7 @@ public class Article {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Article article)) return false;
-        return id != null & id.equals(article.id);
+        return id != null && id.equals(article.id);
     }
 
     @Override

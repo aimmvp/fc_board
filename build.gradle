@@ -1,7 +1,5 @@
 plugins {
     id 'java'
-//    id 'org.springframework.boot' version '3.2.1'
-//    id 'io.spring.dependency-management' version '1.1.4'
     id 'org.springframework.boot' version '2.7.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
@@ -24,32 +22,32 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springdoc:springdoc-openapi-ui:1.6.12'
-    implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.12'
+    // Step 0. Init Dependencies
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-    implementation 'org.springframework.data:spring-data-rest-hal-explorer'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'mysql:mysql-connector-java'
-    runtimeOnly 'org.postgresql:postgresql'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Step 1. Use DB & JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+//    implementation 'org.springdoc:springdoc-openapi-ui:1.6.12'
+//    implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.12'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+//    implementation 'org.springframework.data:spring-data-rest-hal-explorer'
+//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+//    runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'com.github.therapi:therapi-runtime-javadoc-scribe:0.15.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
-
-
-
-//    implememtation 'mysql:mysql-connector-java:8.0.28'
-//    implementation 'org.javassist:javassist:3.29.2-GA'
+//    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

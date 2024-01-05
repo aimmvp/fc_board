@@ -13,39 +13,29 @@ spring:
     username: aimmvp
     password: Q1w2e3r4!!
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-#    DBMS: MySQL (ver. 8.2.0)
-#    Case sensitivity: plain=mixed, delimited=mixed
-#    Driver:
-#      MySQL Connector/J (ver. mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0), JDBC4.2)
-#
-#    Ping: 18 ms
-#    SSL: yes
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    driver-class-name: org.h2.Driver
   jpa:
-    database: mysql
-    open-in-view: false
+    ## ?????
+#    database: mysql
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
+#    open-in-view: false
     show-sql: true
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-#      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-#      hibernate.dialect.storage_engine: innodb
-#    h2.console.enabled: true
-    sql.init.mode: always
-
-    data.rest:
-      base-path: /api
-      detection-strategy: annotated
+  h2.console.enabled: true
+  sql.init.mode: always
 
 ---
 
-#spring:
-#  config.activate.on-profile: testdb
+spring:
+  config.activate.on-profile: testdb
 #  datasource:
 #    url: jdbc:h2:mem:board;mode=mysql
-#    driver-class-name:org.h2.Driver
+#    driverClassName: org.h2.Driver
 #  sql.init.mode: alyways
 #  test.database.replace: none
 
