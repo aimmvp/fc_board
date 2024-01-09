@@ -1,8 +1,6 @@
 package com.example.fc_board.repository;
 
-import com.example.fc_board.domain.Article;
 import com.example.fc_board.domain.ArticleComment;
-import com.example.fc_board.domain.QArticle;
 import com.example.fc_board.domain.QArticleComment;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
