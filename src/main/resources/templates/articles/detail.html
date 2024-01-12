@@ -2,74 +2,96 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시글 페이지</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
     <header></header>
-    <main>
-        <header id="header">
-            <h1>첫번째 글</h1>
-        </header>
-        <aside>
-            <p>aimmvp </p>
-            <p><a rel="me" href="mailto:aimmvp@gmail.com">aimmvp@gmail.com</a> </p>
-            <p><time datetim="2024-01-12T00:00:00">2024-01-12</time></p>
-            <p>#java</p>
-        </aside>
-        <section>
-            <p>본문<br><br></p>
+    <main class="container">
+    <header class="py-5 text-center">
+        <h1>첫번째 글</h1>
+    </header>
+    <div class="row g-5">
+        <section class="col-md-5 col-lg-4 order-md-last">
+            <aside>
+                <p><span class="nick-name">aimmvp </span></p>
+                <p><a class="u-url" rel="me" href="mailto:aimmvp@gmail.com">aimmvp@gmail.com</a> </p>
+                <p><time datetim="2024-01-12T00:00:00">2024-01-12</time></p>
+                <p>#java</p>
 
-            <div>
-                <form>
-                    <label for="articleComment" hidden>댓글</label>
-                    <textarea id="articleComment" placeholder="댓글 쓰기.." rows="3"></textarea>
-                    <button type="submit">쓰기</button>
-                </form>
-                <ul>
-                    <li>
-                        <div>
-                            <time><small>2024-01-01</small></time>
-                            <strong>aimmvp</strong>
-                            <p>
-                                Text1
-                                Text1
-                                Text1
-                                Text1
-                            </p>
-                        </div>
+            </aside>
+        </section>
+        <article id="article-content" class="col-md-9 col-lg-8">
+            <pre>본문</pre>
+        </article>
+    </div>
+    <div class="row g-5" id="article-buttons">
+       <form id="delete-article-form">
+           <div class="pb-5 d-grid gap-2 d-md-block">
+               <a class="btn btn-success me-md-2" role="button" id="update-article">수정</a>
+               <button class="btn btn-danger me-md-2" type="submit">삭제</button>
+           </div>
+       </form>
+    </div>
+    <div class="row g-5">
+        <section>
+            <form class="row g-3 comment-form">
+                <input type="hidden" class="article-id">
+                <div class="col-md-9 col-lg-8">
+                    <label for="comment-textbox" hidden>댓글</label>
+                    <textarea class="form-control comment-textbox" id="comment-textbox" placeholder="댓글 쓰기.." rows="3" required></textarea>
+                </div>
+                <div class="col-md-3 col-lg-4">
+                    <label for="comment-submit" hidden>댓글 쓰기</label>
+                    <button class="btn btn-primary" id="comment-submit" type="submit">쓰기</button>
+                </div>
+            </form>
+            <ul>
+                <li>
+                    <div>
+                        <time><small>2024-01-01</small></time>
+                        <strong>aimmvp</strong>
+                        <p>
+                            Text1
+                            Text1
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div>
+                        <time><small>2024-01-02</small></time>
+                        <strong>aimmvp</strong>
+                        <p>
+                            Text2
+                            Text2
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+        <div class="row g-5">
+            <nav id="pagination" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo; prev</span>
+                        </a>
                     </li>
-                    <li>
-                        <div>
-                            <time><small>2024-01-02</small></time>
-                            <strong>aimmvp2</strong>
-                            <p>
-                                Text2
-                                Text2
-                                Text2
-                                Text2
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time><small>2024-01-03</small></time>
-                            <strong>aimmvp3</strong>
-                            <p>
-                                Text3
-                                Text3
-                                Text3
-                                Text3
-                            </p>
-                        </div>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">next &raquo;</span>
+                        </a>
                     </li>
                 </ul>
-            </div>
-            <nav>
-                <a href="#"> 이전 글</a>
-                <a href="#"> 다음 글</a>
             </nav>
-        </section>
+        </div>
     </main>
     <footer id="footer"> </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
