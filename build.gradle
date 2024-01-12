@@ -53,11 +53,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
+    // Step 5. Spring Security & Thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
 //    implementation 'org.springdoc:springdoc-openapi-ui:1.6.12'
 //    implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.12'
 //    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 //    runtimeOnly 'org.postgresql:postgresql'
 //    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 //    annotationProcessor 'com.github.therapi:therapi-runtime-javadoc-scribe:0.15.0'
