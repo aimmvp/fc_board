@@ -10,7 +10,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()) // 지금은 모든 인증 설정 오픈
                 .formLogin().and()
                 .build();
     }
